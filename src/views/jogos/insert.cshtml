@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "layout";
+}
+ 
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Novo Jogo</h1>
+</div>
+
+@if (ViewData["Message"] is string Message){
+    <div class="alert alert-warning" role="alert">
+        @Message
+    </div>
+}
+
+<form action="" method="post">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" value="" id="nome" class="form-control" placeholder="Nome do Jogo" required autofocus>
+
+    <label for="joguei">Já Jogou?</label>
+    <select class="form-select" name="joguei" id="joguei">
+        <option value="" selected disabled>Selecione uma Opção</option>
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+    </select>
+
+    <label for="categoria">Categoria</label>
+        <select class="form-select" name="id_categoria" id="categoria">
+            <option value="" selected disabled>Selecione uma categoria</option>
+            <option value="1">Ação</option>
+            <option value="2">Aventura</option>
+            <option value="3">Tabuleiro</option>
+            <option value="4">Cartas</option>
+            <option value="5">RPG</option>
+            <option value="6">Tiro em Primeira Pessoa (FPS)</option>
+            <option value="7">Estratégia</option>
+            <option value="8">Simulação</option>
+            <option value="9">Corrida</option>
+            <option value="10">Esportes</option>
+        </select>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Inserir</button>
+
+</form>

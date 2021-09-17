@@ -1,0 +1,53 @@
+﻿@using System.Data
+@{
+    Layout = "layout";
+}
+ 
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Jogos Cadastrados</h1>
+</div>
+
+@if (ViewData["Message"] is string Message){
+    <div class="alert alert-warning" role="alert">
+        @Message
+    </div>
+}
+
+<div class="table-responsive">
+
+    <a href="/jogos/insert" class="btn btn-dark">Adicionar Novo Jogo</a>
+
+    @if (ViewData["Data"] is DataTable data && data.Rows.Count > 0)
+    {
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Já Joguei?</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (DataRow Registry in data.Rows){
+                <tr>
+                    <td> @Registry["Nome"].ToString() </td>
+                    <td> @Registry["Categoria"].ToString() </td>
+                    <td> @(Registry["Joguei"].ToString() == "1" ? "Sim" : "Não") </td>
+                    <td>
+                        <a href="/jogos/edit/@Registry["id_jogo"].ToString()">Editar</a>
+                    </td>
+                    <td>
+                        <a href="/jogos/delete/@Registry["id_jogo"].ToString()">Excluir</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p> Nenhum Jogo Cadastrado! </p>
+    }
+</div>
