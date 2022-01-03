@@ -1,5 +1,7 @@
 # Sistema de catálogo de jogos
 
+Um sistema de catálogo de jogos, desenvolvido usando as tecnologias: .NET Core Web API, C#, CSS3, JavaScript e HTML5.
+
 ## Autores
 
 - André Felipe Pereira dos Santos
