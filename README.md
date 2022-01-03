@@ -1,5 +1,7 @@
 # Games Catalog System
 
+A game catalog system, developed using the technologies: .NET Core Web API, C #, CSS3, JavaScript and HTML5.
+
 ## Authors
 
 - André Felipe Pereira dos Santos
